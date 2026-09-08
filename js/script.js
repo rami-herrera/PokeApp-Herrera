@@ -12,6 +12,7 @@ monica[3] = "Hola";
 console.log(monica);
 
 console.log(monica[3]);
+
 // let numero_usuario = prompt("Ingresar un número entero");
 // console.log("El número ingresado es: " + numero_usuario);
 
