@@ -1,17 +1,19 @@
-let pepe = {};
+let pepe = { nombre: "Pepe", edad: 30, ciudad: "Madrid", carnet: true };
 
 let monica = [1, 2, 3, 4, 5];
 
 console.log(pepe);
 console.log(monica);
 
-console.log(monica[3]);
+// console.log(monica[3]);
 
 monica[3] = "Hola";
+pepe.edad = 38;
 
+console.log(pepe);
 console.log(monica);
 
-console.log(monica[3]);
+// console.log(monica[3]);
 
 // let numero_usuario = prompt("Ingresar un número entero");
 // console.log("El número ingresado es: " + numero_usuario);
