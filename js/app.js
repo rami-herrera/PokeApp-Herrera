@@ -1,45 +1,19 @@
-let pepe = { nombre: "Pepe", edad: 30, ciudad: "Madrid", carnet: true };
+import { pokemones } from "./db/pokemones.js";
 
-let monica = [1, 2, 3, 4, 5];
+console.log(pokemones);
+console.log(pokemones[0]);
+console.log(pokemones[0].nombre);
 
-console.log(pepe);
-console.log(monica);
+console.log(pokemones);
+console.log(pokemones[3]);
+console.log(pokemones[3].nombre);
+let nombrePokemon = prompt("Buscar Pokémon por nombre: ");
 
-// console.log(monica[3]);
+for (let i = 0; i < pokemones.length; i++) {
+  // console.log(pokemones[i].nombre);
 
-monica[3] = "Hola";
-pepe.edad = 38;
-
-console.log(pepe);
-console.log(monica);
-
-// console.log(monica[3]);
-
-// let numero_usuario = prompt("Ingresar un número entero");
-// console.log("El número ingresado es: " + numero_usuario);
-
-// let numero_usuario2 = parseInt(numero_usuario);
-// console.log("El número ingresado es: ");
-// console.log(numero_usuario2);
-
-// let variable1 = "22";
-// let variable2 = 22;
-
-// console.log(variable1);
-// console.log(variable2);
-
-// if (variable1 == variable2) {
-//     console.log("Son iguales");
-// }
-// else {
-//     console.log("No son iguales");
-// }
-
-// variable1 = 22;
-
-// if (variable1 === variable2) {
-//     console.log("Son iguales");
-// }
-// else {
-//     console.log("No son iguales");
-// }
+    if (pokemones[i].nombre === nombrePokemon) {
+        console.log("¡Encontré a Pikachu!");
+        console.log("Esta en la posición " + i);
+    }
+}
