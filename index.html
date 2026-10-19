@@ -4,56 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeApp</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <!doctype html>
-    <html lang="es">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <header class="header">
+      <div class="header-logo">
+        <img src="./assets/img/logo-pokemon.svg" alt="Pokémon" />
+      </div>
 
-        <title>Pokédex Web</title>
+      <nav class="header-nav">
+        <a href="#" id="link-pokedex">Pokédex</a>
+        <a href="#" id="link-login">Iniciar sesión</a>
+        <a href="#" id="link-registro">Registrarse</a>
+        <a href="#" id="link-juego">Batalla</a>
+      </nav>
 
-        <link rel="stylesheet" href="./css/style.css" />
-      </head>
+      <form class="header-search" id="form-busqueda">
+        <input type="search" id="busqueda" placeholder="Buscar Pokémon..." />
 
-      <body>
-        <header class="header">
-          <div class="header-logo">
-            <img src="./assets/img/logo-pokemon.svg" alt="Pokémon" />
-          </div>
+        <button type="submit" aria-label="Buscar">🔍</button>
+      </form>
+    </header>
+    <main class="main">
+      <div id="app"></div>
+    </main>
 
-          <nav class="header-nav">
-            <a href="#" id="link-pokedex">Pokédex</a>
-            <a href="#" id="link-login">Iniciar sesión</a>
-            <a href="#" id="link-registro">Registrarse</a>
-            <a href="#" id="link-juego">Batalla</a>
-          </nav>
+    <footer class="footer">
+      <p>Pokédex Web - Proyecto educativo</p>
 
-          <form class="header-search" id="form-busqueda">
-            <input
-              type="search"
-              id="busqueda"
-              placeholder="Buscar Pokémon..."
-            />
+      <p>Código abierto - GitHub</p>
+    </footer>
 
-            <button type="submit" aria-label="Buscar">🔍</button>
-          </form>
-        </header>
-
-        <main class="main">
-          <div id="app"></div>
-        </main>
-
-        <footer class="footer">
-          <p>Pokédex Web - Proyecto educativo</p>
-
-          <p>Código abierto - GitHub</p>
-        </footer>
-
-        <script type="module" src="./js/app.js"></script>
-      </body>
-    </html>
+    <script type="module" src="./js/app.js"></script>
   </body>
 </html>
