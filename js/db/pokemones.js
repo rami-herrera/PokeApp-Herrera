@@ -1,4 +1,4 @@
-export const pokemones  = [
+export const pokemonesDefecto  = [
   {
     id: 1,
     nombre: "Bulbasaur",
@@ -18,7 +18,7 @@ export const pokemones  = [
     imagen: "../assets/img/bulbasaur.png",
     sonido: "../assets/sound/bulbasaur.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/bulbasaur-shiny.png",
+    imagenShiny: "./assets/img/bulbasaur-shiny.png",
   },
 
   {
@@ -37,10 +37,10 @@ export const pokemones  = [
     evolucion: "Charmeleon",
     nivelEvolucion: 16,
     rareza: "Común",
-    imagen: "../assets/img/charmander.png",
-    sonido: "../assets/sound/charmander.mp3",
+    imagen: "./assets/img/charmander.png",
+    sonido: "./assets/sound/charmander.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/charmander-shiny.png",
+    imagenShiny: "./assets/img/charmander-shiny.png",
   },
 
   {
@@ -59,10 +59,10 @@ export const pokemones  = [
     evolucion: "Wartortle",
     nivelEvolucion: 16,
     rareza: "Común",
-    imagen: "../assets/img/squirtle.png",
-    sonido: "../assets/sound/squirtle.mp3",
+    imagen: "./assets/img/squirtle.png",
+    sonido: "./assets/sound/squirtle.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/squirtle-shiny.png",
+    imagenShiny: "./assets/img/squirtle-shiny.png",
   },
 
   {
@@ -81,10 +81,10 @@ export const pokemones  = [
     evolucion: "Raichu",
     nivelEvolucion: null,
     rareza: "Raro",
-    imagen: "../assets/img/pikachu.png",
-    sonido: "../assets/sound/pikachu.mp3",
+    imagen: "./assets/img/pikachu.png",
+    sonido: "./assets/sound/pikachu.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/pikachu-shiny.png",
+    imagenShiny: "./assets/img/pikachu-shiny.png",
   },
 
   {
@@ -103,10 +103,10 @@ export const pokemones  = [
     evolucion: "Golduck",
     nivelEvolucion: 33,
     rareza: "Común",
-    imagen: "../assets/img/psyduck.png",
-    sonido: "../assets/sound/psyduck.mp3",
+    imagen: "./assets/img/psyduck.png",
+    sonido: "./assets/sound/psyduck.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/psyduck-shiny.png",
+    imagenShiny: "./assets/img/psyduck-shiny.png",
   },
 
   {
@@ -125,10 +125,10 @@ export const pokemones  = [
     evolucion: "Marowak",
     nivelEvolucion: 28,
     rareza: "Poco común",
-    imagen: "../assets/img/cubone.png",
-    sonido: "../assets/sound/cubone.mp3",
+    imagen: "./assets/img/cubone.png",
+    sonido: "./assets/sound/cubone.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/cubone-shiny.png",
+    imagenShiny: "./assets/img/cubone-shiny.png",
   },
 
   {
@@ -147,10 +147,10 @@ export const pokemones  = [
     evolucion: "Vaporeon",
     nivelEvolucion: null,
     rareza: "Raro",
-    imagen: "../assets/img/eevee.png",
-    sonido: "../assets/sound/eevee.mp3",
+    imagen: "./assets/img/eevee.png",
+    sonido: "./assets/sound/eevee.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/eevee-shiny.png",
+    imagenShiny: "./assets/img/eevee-shiny.png",
   },
 
   {
@@ -169,10 +169,10 @@ export const pokemones  = [
     evolucion: null,
     nivelEvolucion: null,
     rareza: "Raro",
-    imagen: "../assets/img/snorlax.png",
-    sonido: "../assets/sound/snorlax.mp3",
+    imagen: "./assets/img/snorlax.png",
+    sonido: "./assets/sound/snorlax.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/snorlax-shiny.png",
+    imagenShiny: "./assets/img/snorlax-shiny.png",
   },
 
   {
@@ -191,10 +191,10 @@ export const pokemones  = [
     evolucion: null,
     nivelEvolucion: null,
     rareza: "Legendario",
-    imagen: "../assets/img/mewtwo.png",
-    sonido: "../assets/sound/mewtwo.mp3",
+    imagen: "./assets/img/mewtwo.png",
+    sonido: "./assets/sound/mewtwo.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/mewtwo-shiny.png",
+    imagenShiny: "./assets/img/mewtwo-shiny.png",
   },
 
   {
@@ -213,9 +213,9 @@ export const pokemones  = [
     evolucion: null,
     nivelEvolucion: null,
     rareza: "Mítico",
-    imagen: "../assets/img/mew.png",
-    sonido: "../assets/sound/mew.mp3",
+    imagen: "./assets/img/mew.png",
+    sonido: "./assets/sound/mew.mp3",
     shiny: true,
-    imagenShiny: "../assets/img/mew-shiny.png",
+    imagenShiny: "./assets/img/mew-shiny.png",
   },
 ];

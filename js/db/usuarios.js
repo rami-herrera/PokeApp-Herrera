@@ -1,4 +1,4 @@
-const usuarios = [
+export const usuariosDefecto = [
   {
     id: 1,
     nombre: "Juan",
@@ -35,7 +35,7 @@ const usuarios = [
     email: "sofia@example.com",
     username: "1357",
     password: "sofia123",
-    avatar: "./assets/avatar/default.png",
+    avatar: "./assets/avatar/2.png",
     admin: false,
   },
 
@@ -55,7 +55,7 @@ const usuarios = [
     email: "valentina@example.com",
     username: "9876",
     password: "valen789",
-    avatar: "./assets/avatar/default.png",
+    avatar: "./assets/avatar/2.png",
     admin: false,
   },
 
@@ -75,7 +75,7 @@ const usuarios = [
     email: "camila@example.com",
     username: "3344",
     password: "camila321",
-    avatar: "./assets/avatar/default.png",
+    avatar: "./assets/avatar/2.png",
     admin: false,
   },
 
@@ -95,7 +95,7 @@ const usuarios = [
     email: "julieta@example.com",
     username: "7788",
     password: "juli987",
-    avatar: "./assets/avatar/default.png",
+    avatar: "./assets/avatar/2.png",
     admin: false,
   },
 ];

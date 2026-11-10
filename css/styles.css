@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+/* RESET */
 
 * {
   margin: 0;
@@ -8,9 +6,7 @@
   box-sizing: border-box;
 }
 
-/* =========================
-   VARIABLES
-========================= */
+/* VARIABLES GLOBALES */
 
 :root {
   --amarillo: #ffdd55;
@@ -21,9 +17,7 @@
   --negro: #111111;
 }
 
-/* =========================
-   BODY
-========================= */
+/* BODY */
 
 body {
   min-height: 100vh;
@@ -35,9 +29,7 @@ body {
   background: linear-gradient(135deg, var(--amarillo), var(--naranja));
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .header {
   min-height: 90px;
@@ -124,9 +116,7 @@ body {
   cursor: pointer;
 }
 
-/* =========================
-   MAIN
-========================= */
+/* MAIN */
 
 .main {
   min-height: calc(100vh - 150px);
@@ -143,9 +133,7 @@ body {
   margin: 0 auto;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 .footer {
   padding: 25px 40px;
@@ -163,9 +151,13 @@ body {
   font-size: 0.95rem;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .pokedex-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 @media (max-width: 900px) {
   .header {
@@ -185,6 +177,15 @@ body {
 
   .header-search {
     order: 2;
+  }
+
+  .pokedex-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pokedex-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -207,5 +208,223 @@ body {
 
   .header-nav a {
     font-size: 1rem;
+  }
+
+  .pokedex-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .pokedex-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* POKEDEX */
+
+.pokedex-section {
+  width: 100%;
+}
+
+/* GALERÍA */
+
+.pokedex-gallery {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 40px;
+
+  width: 100%;
+}
+
+/* TARJETA */
+
+.pokemon-card {
+  background-color: var(--blanco);
+
+  border: 3px solid var(--negro);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 8px 8px 0 var(--negro);
+}
+
+/* IMAGEN */
+
+.pokemon-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background-color: var(--amarillo);
+
+  border-bottom: 3px solid var(--negro);
+}
+
+.pokemon-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* INFORMACIÓN */
+
+.pokemon-info {
+  padding: 18px;
+
+  text-align: center;
+}
+
+.pokemon-id {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.pokemon-info h2 {
+  margin-bottom: 12px;
+
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+/* TIPOS */
+
+.pokemon-types {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-bottom: 12px;
+}
+
+.type {
+  display: inline-block;
+
+  padding: 5px 12px;
+
+  border-radius: 20px;
+
+  font-size: 0.85rem;
+  font-weight: bold;
+
+  border: 2px solid var(--negro);
+}
+
+/* Tipos básicos */
+
+.type-planta {
+  background-color: #8bc34a;
+}
+
+.type-veneno {
+  background-color: #b36bcf;
+}
+
+.type-fuego {
+  background-color: #ff7043;
+}
+
+.type-agua {
+  background-color: #64b5f6;
+}
+
+.type-electrico {
+  background-color: #ffd54f;
+}
+
+.type-tierra {
+  background-color: #c9a66b;
+}
+
+.type-normal {
+  background-color: #d6d6d6;
+}
+
+.type-psiquico {
+  background-color: #ef6cae;
+}
+
+/* RAREZA */
+
+.pokemon-rareza {
+  margin-bottom: 15px;
+
+  font-size: 0.95rem;
+}
+
+/* BOTÓN DETALLE */
+
+.btn-detalle {
+  width: 100%;
+
+  padding: 10px 15px;
+
+  border: 2px solid var(--negro);
+  border-radius: 8px;
+
+  background-color: var(--amarillo);
+
+  color: var(--negro);
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.btn-detalle:hover {
+  background-color: var(--naranja);
+}
+
+/* PERFIL USUARIO COMÚN */
+
+.user-profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-profile-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}
+
+.user-profile-info div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    width: 300px;
+  }
+
+  p span {
+    color: #ffffff;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 }
