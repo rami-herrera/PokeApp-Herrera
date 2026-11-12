@@ -32,6 +32,32 @@ for (let usuario of cuentasGuardadas) {
   }
 }
 
+// Si el navegador ya tenía usuarios guardados, el código agrega las cuentas iniciales que falten.
+let seAgregaronUsuarios = false;
+for (let cuenta of usuariosDefecto) {
+  let existe = false;
+  let siguienteId = 1;
+  let idOcupado = false;
+  for (let guardado of cuentasGuardadas) {
+    if (String(guardado.username).toLowerCase() === cuenta.username.toLowerCase() ||
+        guardado.email.toLowerCase() === cuenta.email.toLowerCase()) {
+      existe = true;
+      break;
+    }
+    if (Number(guardado.id) === cuenta.id) idOcupado = true;
+    if (Number(guardado.id) >= siguienteId) siguienteId = Number(guardado.id) + 1;
+  }
+  if (!existe) {
+    const nuevaCuenta = JSON.parse(JSON.stringify(cuenta));
+    if (idOcupado) nuevaCuenta.id = siguienteId;
+    cuentasGuardadas.push(nuevaCuenta);
+    seAgregaronUsuarios = true;
+  }
+}
+if (seAgregaronUsuarios) {
+  localStorage.setItem("usuarios", JSON.stringify(cuentasGuardadas));
+}
+
 let pokemonesGuardados = JSON.parse(localStorage.getItem("pokemones"));
 
 for (let pokemonGuardado of pokemonesGuardados) {
