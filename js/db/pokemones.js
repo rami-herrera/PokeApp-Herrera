@@ -3,6 +3,8 @@ export const pokemonesDefecto  = [
     id: 1,
     nombre: "Bulbasaur",
     tipo: ["Planta", "Veneno"],
+    descripcion:
+      "Bulbasaur nace con una semilla en el lomo. La semilla crece a medida que recibe energía del sol.",
     altura: 0.7,
     peso: 6.9,
     generacion: 1,
@@ -25,6 +27,8 @@ export const pokemonesDefecto  = [
     id: 4,
     nombre: "Charmander",
     tipo: ["Fuego"],
+    descripcion:
+      "La llama de la punta de su cola indica su estado de ánimo. Si está saludable, arde con intensidad.",
     altura: 0.6,
     peso: 8.5,
     generacion: 1,
@@ -47,6 +51,8 @@ export const pokemonesDefecto  = [
     id: 7,
     nombre: "Squirtle",
     tipo: ["Agua"],
+    descripcion:
+      "Se protege dentro de su caparazón y lanza chorros de agua para atacar a sus rivales.",
     altura: 0.5,
     peso: 9.0,
     generacion: 1,
@@ -69,6 +75,8 @@ export const pokemonesDefecto  = [
     id: 25,
     nombre: "Pikachu",
     tipo: ["Eléctrico"],
+    descripcion:
+      "Almacena electricidad en las mejillas y puede liberarla mediante descargas eléctricas.",
     altura: 0.4,
     peso: 6.0,
     generacion: 1,
@@ -91,6 +99,8 @@ export const pokemonesDefecto  = [
     id: 54,
     nombre: "Psyduck",
     tipo: ["Agua"],
+    descripcion:
+      "Suele sufrir dolores de cabeza que, cuando se intensifican, liberan sus poderes psíquicos.",
     altura: 0.8,
     peso: 19.6,
     generacion: 1,
@@ -113,6 +123,8 @@ export const pokemonesDefecto  = [
     id: 104,
     nombre: "Cubone",
     tipo: ["Tierra"],
+    descripcion:
+      "Lleva sobre la cabeza el cráneo de su madre y expresa su tristeza con llantos que resuenan en él.",
     altura: 0.4,
     peso: 6.5,
     generacion: 1,
@@ -135,6 +147,8 @@ export const pokemonesDefecto  = [
     id: 133,
     nombre: "Eevee",
     tipo: ["Normal"],
+    descripcion:
+      "Su composición genética inestable le permite evolucionar de distintas maneras según su entorno.",
     altura: 0.3,
     peso: 6.5,
     generacion: 1,
@@ -157,6 +171,8 @@ export const pokemonesDefecto  = [
     id: 143,
     nombre: "Snorlax",
     tipo: ["Normal"],
+    descripcion:
+      "Pasa gran parte del día durmiendo y puede comer enormes cantidades sin sentirse satisfecho.",
     altura: 2.1,
     peso: 460.0,
     generacion: 1,
@@ -179,6 +195,8 @@ export const pokemonesDefecto  = [
     id: 150,
     nombre: "Mewtwo",
     tipo: ["Psíquico"],
+    descripcion:
+      "Fue creado mediante experimentos genéticos. Su gran poder psíquico lo convierte en un Pokémon muy difícil de controlar.",
     altura: 2.0,
     peso: 122.0,
     generacion: 1,
@@ -201,6 +219,8 @@ export const pokemonesDefecto  = [
     id: 151,
     nombre: "Mew",
     tipo: ["Psíquico"],
+    descripcion:
+      "Se dice que contiene el material genético de todos los Pokémon y que puede aprender muchos movimientos.",
     altura: 0.4,
     peso: 4.0,
     generacion: 1,
