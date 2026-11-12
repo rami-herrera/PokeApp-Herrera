@@ -20,6 +20,21 @@ if (bdUsuariosExiste === null) {
   console.log("BD de usuarios existe en localStorage");
 }
 
+let pokemonesGuardados = JSON.parse(localStorage.getItem("pokemones"));
+
+for (let pokemonGuardado of pokemonesGuardados) {
+  for (let pokemonDefecto of pokemonesDefecto) {
+    if (
+      pokemonGuardado.id === pokemonDefecto.id &&
+      !pokemonGuardado.descripcion
+    ) {
+      pokemonGuardado.descripcion = pokemonDefecto.descripcion;
+    }
+  }
+}
+
+localStorage.setItem("pokemones", JSON.stringify(pokemonesGuardados));
+
 export function leerPokemones() {
   let pokemonesJson = localStorage.getItem("pokemones");
   const pokemonesRead = JSON.parse(pokemonesJson);

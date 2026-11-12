@@ -52,18 +52,31 @@ const pokedex = `
 `;
 
 // Función para cargar los elementos dinámicos
+// Las rutas que empiezan en ../assets/ provienen de datos guardados antes.
+function rutaRecurso(ruta) {
+  if (ruta && ruta.startsWith("../assets/")) {
+    return ruta.replace("../assets/", "./assets/");
+  }
+  return ruta;
+}
+
 function cargarPokedex() {
   const pokemones = leerPokemones();
 
   const pokedexGallery = document.querySelector("#pokedex-gallery");
 
   for (let pokemon of pokemones) {
+    let etiquetasTipo = "";
+    for (let tipo of pokemon.tipo) {
+      etiquetasTipo += `<span class="type type-${tipo.toLowerCase()}">${tipo}</span>`;
+    }
+
     pokedexGallery.innerHTML += `
       <article class="pokemon-card">
 
         <div class="pokemon-image">
           <img 
-            src="${pokemon.imagen}" 
+            src="${rutaRecurso(pokemon.imagen)}" 
             alt="${pokemon.nombre}"
           />
         </div>
@@ -77,9 +90,7 @@ function cargarPokedex() {
           <h2>${pokemon.nombre}</h2>
 
           <div class="pokemon-types">
-            <span class="type type-${pokemon.tipo[0].toLowerCase()}">
-              ${pokemon.tipo[0]}
-            </span>
+            ${etiquetasTipo}
           </div>
 
           <p class="pokemon-rareza">
@@ -95,6 +106,13 @@ function cargarPokedex() {
       </article>
     `;
   }
+
+  pokedexGallery.addEventListener("click", function (evento) {
+    const id = evento.target.dataset.id;
+    if (id) {
+      mostrarDetalle(id);
+    }
+  });
 }
 
 // Evento del botón Pokédex
@@ -103,10 +121,103 @@ const botonPokedex = document.querySelector("#link-pokedex");
 botonPokedex.addEventListener("click", function (event) {
   event.preventDefault();
 
-  app.innerHTML = pokedex;
-
-  cargarPokedex();
+  mostrarLista();
 });
+
+function mostrarLista() {
+  app.innerHTML = pokedex;
+  cargarPokedex();
+}
+
+// El botón guarda el número como texto. Lo comparamos con el ID de la base.
+function mostrarDetalle(id) {
+  app.innerHTML = `
+    <section>
+      <button type="button" id="volver-pokedex">Volver a la Pokédex</button>
+      <div id="detalle-pokemon"></div>
+    </section>
+  `;
+  document.querySelector("#volver-pokedex").addEventListener("click", mostrarLista);
+  const detalle = document.querySelector("#detalle-pokemon");
+
+  for (let pokemon of leerPokemones()) {
+    if (String(pokemon.id) === id) {
+      detalle.innerHTML = `
+        <h1></h1>
+        <img id="imagen-detalle" width="180" />
+        <p id="descripcion-detalle"></p>
+        <ul id="datos-detalle"></ul>
+        <div id="sonido-detalle"></div>
+        <div id="shiny-detalle"></div>
+      `;
+      detalle.querySelector("h1").textContent = `N.º ${pokemon.id} · ${pokemon.nombre}`;
+      const imagen = detalle.querySelector("#imagen-detalle");
+      imagen.src = rutaRecurso(pokemon.imagen);
+      imagen.alt = pokemon.nombre;
+      detalle.querySelector("#descripcion-detalle").textContent =
+        pokemon.descripcion || "Sin descripción registrada.";
+
+      let evolucion = "No evoluciona";
+      if (pokemon.tieneEvolucion) {
+        evolucion = pokemon.evolucion || "Sin registrar";
+        if (pokemon.nivelEvolucion) {
+          evolucion += ` (nivel ${pokemon.nivelEvolucion})`;
+        } else {
+          evolucion += " (sin nivel registrado)";
+        }
+      }
+
+      const datos = [
+        `Tipo: ${pokemon.tipo.join(" / ")}`,
+        `Rareza: ${pokemon.rareza}`,
+        `Generación: ${pokemon.generacion}`,
+        `Altura: ${pokemon.altura} m`,
+        `Peso: ${pokemon.peso} kg`,
+        `HP: ${pokemon.hp}`,
+        `Ataque: ${pokemon.ataque}`,
+        `Defensa: ${pokemon.defensa}`,
+        `Velocidad: ${pokemon.velocidad}`,
+        `Habilidad: ${pokemon.habilidad}`,
+        `Evolución: ${evolucion}`
+      ];
+      const lista = detalle.querySelector("#datos-detalle");
+      let filas = "";
+      for (let i = 0; i < datos.length; i++) {
+        filas += `<li id="dato-${i}"></li>`;
+      }
+      lista.innerHTML = filas;
+      for (let i = 0; i < datos.length; i++) {
+        lista.querySelector(`#dato-${i}`).textContent = datos[i];
+      }
+
+      const sonido = detalle.querySelector("#sonido-detalle");
+      if (pokemon.sonido) {
+        sonido.innerHTML = '<p>Sonido</p><audio controls preload="none"></audio>';
+        sonido.querySelector("audio").src = rutaRecurso(pokemon.sonido);
+      } else {
+        sonido.textContent = "Sin sonido registrado.";
+      }
+
+      const shiny = detalle.querySelector("#shiny-detalle");
+      if (pokemon.shiny && pokemon.imagenShiny) {
+        shiny.innerHTML = '<p>Variante shiny</p><img width="150" />';
+        const imagenShiny = shiny.querySelector("img");
+        imagenShiny.alt = `${pokemon.nombre} shiny`;
+        imagenShiny.addEventListener("error", function () {
+          shiny.textContent = "Variante shiny: imagen no disponible.";
+        });
+        imagenShiny.src = rutaRecurso(pokemon.imagenShiny);
+      } else if (pokemon.shiny) {
+        shiny.textContent = "Variante shiny: sin imagen registrada.";
+      } else {
+        shiny.textContent = "Sin variante shiny registrada.";
+      }
+      return;
+    }
+  }
+
+  detalle.textContent = "Este Pokémon ya no está en la Pokédex.";
+}
 
 // ==========================================
 // 3. INICIAR SESIÓN
@@ -569,6 +680,6 @@ for (let pokemon of pokemones) {
 
 pokedexSection.innerHTML += `<article class="pokemon-card">
                               <h2>${pokemon.nombre}</h2>
-                              <img src="${pokemon.imagen}" alt="${pokemon.nombre}" />
+                              <img src="${rutaRecurso(pokemon.imagen)}" alt="${pokemon.nombre}" />
                               </article>`;
 } */ 
