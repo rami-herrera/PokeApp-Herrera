@@ -20,6 +20,18 @@ if (bdUsuariosExiste === null) {
   console.log("BD de usuarios existe en localStorage");
 }
 
+// Lo cambié porque antes guardaba a Juan con la clave "1234"
+const cuentasGuardadas = leerUsuarios();
+for (let usuario of cuentasGuardadas) {
+  if (usuario.id === 1 && usuario.username === "1234" &&
+      usuario.email === "juan@example.com" && usuario.admin === true &&
+      usuario.password === "1234") {
+    usuario.password = "password123";
+    localStorage.setItem("usuarios", JSON.stringify(cuentasGuardadas));
+    break;
+  }
+}
+
 let pokemonesGuardados = JSON.parse(localStorage.getItem("pokemones"));
 
 for (let pokemonGuardado of pokemonesGuardados) {
@@ -59,6 +71,23 @@ export function guardarUsuarios(usuario) {
   usuarios.push(usuario);
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
   console.log(`Usuario ${usuario.nombre} guardado en localStorage`);
+}
+
+// La sesión recuerda cuál de las cuentas guardadas está usando la aplicación
+export function iniciarSesion(usuario) {
+  localStorage.setItem("pokeappUsuarioActivo", JSON.stringify(usuario.id));
+}
+
+export function leerUsuarioActivo() {
+  const id = JSON.parse(localStorage.getItem("pokeappUsuarioActivo"));
+  for (let usuario of leerUsuarios()) {
+    if (usuario.id === id) return usuario;
+  }
+  return null;
+}
+
+export function cerrarSesion() {
+  localStorage.removeItem("pokeappUsuarioActivo");
 }
 
 // EJERCICIO REALIZADO EN CLASE
