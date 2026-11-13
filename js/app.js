@@ -21,8 +21,8 @@ const app = document.querySelector("#app");
 // Estructura básica de la pantalla
 const landing = `
   <section class="landing">
-    <h1>Bienvenido a PokeApp</h1>
-    <p>Explorá el mundo Pokémon.</p>
+    <h1>Bienvenido a mi PokeApp</h1>
+    <p>Explorá el mundo Pokémon!</p>
     <p>Elegí una opción del menú para comenzar.</p>
   </section>
 `;

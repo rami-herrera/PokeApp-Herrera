@@ -50,9 +50,8 @@ body {
 /* LOGO */
 
 .header-logo img {
-  width: 170px;
-  height: auto;
-
+  height: 90px;
+  width: auto;
   display: block;
 }
 
@@ -76,44 +75,6 @@ body {
 
 .header-nav a:hover {
   color: var(--azul);
-}
-
-/* BUSCADOR */
-
-.header-search {
-  display: flex;
-  align-items: center;
-
-  border: 2px solid var(--negro);
-
-  border-radius: 30px;
-
-  overflow: hidden;
-
-  background-color: var(--blanco);
-}
-
-.header-search input {
-  width: 180px;
-
-  border: none;
-  outline: none;
-
-  padding: 10px 15px;
-
-  font-size: 1rem;
-}
-
-.header-search button {
-  border: none;
-
-  background-color: transparent;
-
-  padding: 10px 15px;
-
-  font-size: 1.2rem;
-
-  cursor: pointer;
 }
 
 /* MAIN */
